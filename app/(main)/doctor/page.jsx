@@ -1,6 +1,7 @@
 import { getCurrentUser } from "@/actions/onboarding";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { getDoctorAppointments, getDoctorAvailability } from "@/actions/doctor";
+import { redirect } from "next/navigation";
 import DoctorAppointmentsList from "./_components/appointments-list";
 import { AvailabilitySettings } from "./_components/availability-settings";
 import { Calendar, Clock, DollarSign } from "lucide-react";

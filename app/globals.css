@@ -112,6 +112,739 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+@layer utilities {
+  /* Complex floating animations */
+  @keyframes float-complex-1 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-15px) translateX(5px) rotate(5deg);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-3px) rotate(-3deg);
+    }
+    75% {
+      transform: translateY(-20px) translateX(8px) rotate(8deg);
+    }
+  }
+
+  @keyframes float-complex-2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-12px) translateX(-6px) rotate(-4deg);
+    }
+    66% {
+      transform: translateY(-18px) translateX(4px) rotate(6deg);
+    }
+  }
+
+  @keyframes float-complex-3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px) rotate(0deg);
+    }
+    20% {
+      transform: translateY(-8px) translateX(3px) rotate(2deg);
+    }
+    40% {
+      transform: translateY(-16px) translateX(-2px) rotate(-3deg);
+    }
+    60% {
+      transform: translateY(-12px) translateX(6px) rotate(4deg);
+    }
+    80% {
+      transform: translateY(-20px) translateX(-4px) rotate(-2deg);
+    }
+  }
+
+  /* Heart animations */
+  @keyframes float-heart-1 {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-25px) scale(1.1);
+    }
+  }
+
+  @keyframes float-heart-2 {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-15px) scale(1.05) rotate(5deg);
+    }
+  }
+
+  @keyframes float-heart-3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    33% {
+      transform: translateY(-10px) translateX(-5px);
+    }
+    66% {
+      transform: translateY(-20px) translateX(3px);
+    }
+  }
+
+  /* Pill animations */
+  @keyframes float-pill-1 {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-18px) rotate(180deg);
+    }
+  }
+
+  @keyframes float-pill-2 {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-8px) rotate(45deg);
+    }
+    50% {
+      transform: translateY(-16px) rotate(90deg);
+    }
+    75% {
+      transform: translateY(-12px) rotate(135deg);
+    }
+  }
+
+  /* Stethoscope animations */
+  @keyframes float-steth-1 {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-22px) rotate(-10deg);
+    }
+  }
+
+  @keyframes float-steth-2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-14px) translateX(8px);
+    }
+  }
+
+  /* Misc floating animations */
+  @keyframes float-misc-1 {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-12px) scale(1.2);
+    }
+  }
+
+  @keyframes float-misc-2 {
+    0%,
+    100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-16px) rotate(15deg);
+    }
+  }
+
+  @keyframes float-misc-3 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-6px);
+    }
+  }
+
+  /* Particle animations */
+  @keyframes particle-1 {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.5;
+    }
+    50% {
+      transform: translateY(-30px) scale(1.5);
+      opacity: 1;
+    }
+  }
+
+  @keyframes particle-2 {
+    0%,
+    100% {
+      transform: translateY(0px) translateX(0px);
+      opacity: 0.4;
+    }
+    50% {
+      transform: translateY(-20px) translateX(10px);
+      opacity: 1;
+    }
+  }
+
+  @keyframes particle-3 {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-25px) scale(2);
+      opacity: 1;
+    }
+  }
+
+  /* Complex heartbeat animations */
+  @keyframes heartbeat-complex {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    10% {
+      transform: scale(1.1);
+    }
+    20% {
+      transform: scale(1);
+    }
+    30% {
+      transform: scale(1.15);
+    }
+    40% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes heartbeat-delayed {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    15% {
+      transform: scale(1.08);
+    }
+    30% {
+      transform: scale(1);
+    }
+    45% {
+      transform: scale(1.12);
+    }
+    60% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes heartbeat-fast {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes heartbeat-logo {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Special effect animations */
+  @keyframes wobble {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg);
+    }
+    75% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes swing {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(15deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    60% {
+      transform: rotate(5deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+  }
+
+  @keyframes pendulum {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+
+  @keyframes wave {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    25% {
+      transform: translateY(-5px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    75% {
+      transform: translateY(5px);
+    }
+  }
+
+  @keyframes electric {
+    0%,
+    100% {
+      transform: scale(1) rotate(0deg);
+      filter: brightness(1);
+    }
+    50% {
+      transform: scale(1.2) rotate(180deg);
+      filter: brightness(1.5);
+    }
+  }
+
+  @keyframes shield-glow {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.5));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.8));
+    }
+  }
+
+  @keyframes tick {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes twinkle {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.5);
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.4;
+      filter: blur(0px);
+    }
+    50% {
+      opacity: 1;
+      filter: blur(2px);
+    }
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      opacity: 0.6;
+      transform: scale(1) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(2) rotate(180deg);
+    }
+  }
+
+  /* Text and UI animations */
+  @keyframes gradient-x {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  @keyframes text-glow {
+    0%,
+    100% {
+      text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
+    }
+    50% {
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.8), 0 0 30px rgba(239, 68, 68, 0.6);
+    }
+  }
+
+  @keyframes fade-in-words {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes glow-border {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes border-glow {
+    0%,
+    100% {
+      opacity: 0.2;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.6;
+      transform: scale(1.02);
+    }
+  }
+
+  @keyframes button-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.6), 0 0 40px rgba(239, 68, 68, 0.4);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-right-delayed {
+    0% {
+      transform: translateX(50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes counter {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes count-up {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes count-up-delay {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes count-up-delay-2 {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes card-float-1 {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+
+  @keyframes card-float-2 {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes card-float-3 {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-6px);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes rotate-slow {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes scale-pulse {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Apply animations */
+  .animate-float-complex-1 {
+    animation: float-complex-1 8s ease-in-out infinite;
+  }
+  .animate-float-complex-2 {
+    animation: float-complex-2 6s ease-in-out infinite;
+  }
+  .animate-float-complex-3 {
+    animation: float-complex-3 10s ease-in-out infinite;
+  }
+
+  .animate-float-heart-1 {
+    animation: float-heart-1 4s ease-in-out infinite;
+  }
+  .animate-float-heart-2 {
+    animation: float-heart-2 5s ease-in-out infinite;
+  }
+  .animate-float-heart-3 {
+    animation: float-heart-3 6s ease-in-out infinite;
+  }
+
+  .animate-float-pill-1 {
+    animation: float-pill-1 7s ease-in-out infinite;
+  }
+  .animate-float-pill-2 {
+    animation: float-pill-2 5s ease-in-out infinite;
+  }
+
+  .animate-float-steth-1 {
+    animation: float-steth-1 6s ease-in-out infinite;
+  }
+  .animate-float-steth-2 {
+    animation: float-steth-2 4s ease-in-out infinite;
+  }
+
+  .animate-float-misc-1 {
+    animation: float-misc-1 3s ease-in-out infinite;
+  }
+  .animate-float-misc-2 {
+    animation: float-misc-2 5s ease-in-out infinite;
+  }
+  .animate-float-misc-3 {
+    animation: float-misc-3 4s ease-in-out infinite;
+  }
+
+  .animate-particle-1 {
+    animation: particle-1 4s ease-in-out infinite;
+  }
+  .animate-particle-2 {
+    animation: particle-2 3s ease-in-out infinite;
+  }
+  .animate-particle-3 {
+    animation: particle-3 5s ease-in-out infinite;
+  }
+
+  .animate-heartbeat-complex {
+    animation: heartbeat-complex 2s ease-in-out infinite;
+  }
+  .animate-heartbeat-delayed {
+    animation: heartbeat-delayed 2.5s ease-in-out infinite;
+  }
+  .animate-heartbeat-fast {
+    animation: heartbeat-fast 1.5s ease-in-out infinite;
+  }
+  .animate-heartbeat-logo {
+    animation: heartbeat-logo 2s ease-in-out infinite;
+  }
+
+  .animate-wobble {
+    animation: wobble 3s ease-in-out infinite;
+  }
+  .animate-swing {
+    animation: swing 4s ease-in-out infinite;
+  }
+  .animate-pendulum {
+    animation: pendulum 3s ease-in-out infinite;
+  }
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+  }
+  .animate-electric {
+    animation: electric 2s ease-in-out infinite;
+  }
+  .animate-shield-glow {
+    animation: shield-glow 3s ease-in-out infinite;
+  }
+  .animate-tick {
+    animation: tick 8s linear infinite;
+  }
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+  .animate-glow-pulse {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-gradient-x {
+    animation: gradient-x 3s ease infinite;
+    background-size: 200% 200%;
+  }
+  .animate-text-glow {
+    animation: text-glow 2s ease-in-out infinite;
+  }
+  .animate-fade-in-words {
+    animation: fade-in-words 1s ease-out;
+  }
+  .animate-glow-border {
+    animation: glow-border 2s ease-in-out infinite;
+  }
+  .animate-border-glow {
+    animation: border-glow 3s ease-in-out infinite;
+  }
+  .animate-button-glow {
+    animation: button-glow 2s ease-in-out infinite;
+  }
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s ease-out;
+  }
+  .animate-slide-in-right-delayed {
+    animation: slide-in-right-delayed 0.8s ease-out 0.2s both;
+  }
+  .animate-counter {
+    animation: counter 3s ease-in-out infinite;
+  }
+  .animate-count-up {
+    animation: count-up 1s ease-out;
+  }
+  .animate-count-up-delay {
+    animation: count-up-delay 1s ease-out 0.2s both;
+  }
+  .animate-count-up-delay-2 {
+    animation: count-up-delay-2 1s ease-out 0.4s both;
+  }
+  .animate-card-float-1 {
+    animation: card-float-1 4s ease-in-out infinite;
+  }
+  .animate-card-float-2 {
+    animation: card-float-2 5s ease-in-out infinite 0.5s;
+  }
+  .animate-card-float-3 {
+    animation: card-float-3 4.5s ease-in-out infinite 1s;
+  }
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+  .animate-rotate-slow {
+    animation: rotate-slow 8s linear infinite;
+  }
+  .animate-scale-pulse {
+    animation: scale-pulse 2s ease-in-out infinite;
+  }
+}
+
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -122,9 +855,10 @@
 }
 
 @utility gradient {
-  @apply bg-gradient-to-b from-emerald-500 to-teal-400;
+  @apply bg-gradient-to-b from-red-500 via-red-700 to-black;
 }
 
 @utility gradient-title {
   @apply gradient font-bold text-transparent bg-clip-text pb-1 pr-2;
 }
+

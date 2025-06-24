@@ -65,7 +65,7 @@ export function VerifiedDoctors({ doctors }) {
 
   return (
     <div>
-      <Card className="bg-muted/20 border-emerald-900/20">
+      <Card className="bg-muted/20 border-red-900/20">
         <CardHeader>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
@@ -80,7 +80,7 @@ export function VerifiedDoctors({ doctors }) {
               <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
               <Input
                 placeholder="Search doctors..."
-                className="pl-8 bg-background border-emerald-900/20"
+                className="pl-8 bg-background border-red-900/20"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -102,13 +102,13 @@ export function VerifiedDoctors({ doctors }) {
                 return (
                   <Card
                     key={doctor.id}
-                    className="bg-background border-emerald-900/20 hover:border-emerald-700/30 transition-all"
+                    className="bg-background border-red-900/20 hover:border-red-700/30 transition-all"
                   >
                     <CardContent className="p-4">
                       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div className="flex items-center gap-3">
                           <div className="bg-muted/20 rounded-full p-2">
-                            <User className="h-5 w-5 text-emerald-400" />
+                            <User className="h-5 w-5 text-red-400" />
                           </div>
                           <div>
                             <h3 className="font-medium text-white">

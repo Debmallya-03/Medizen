@@ -228,7 +228,7 @@ export function AppointmentCard({
 
   return (
     <>
-      <Card className="border-emerald-900/20 hover:border-emerald-700/30 transition-all">
+      <Card className="border-red-900/20 hover:border-red-700/30 transition-all">
         <CardContent className="p-4">
           <div className="flex flex-col md:flex-row justify-between gap-4">
             <div className="flex items-start gap-3">
@@ -330,7 +330,7 @@ export function AppointmentCard({
                 {otherPartyLabel}
               </h4>
               <div className="flex items-center">
-                <div className="h-5 w-5 text-emerald-400 mr-2">
+                <div className="h-5 w-5 text-red-400 mr-2">
                   {otherPartyIcon}
                 </div>
                 <div>
@@ -360,13 +360,13 @@ export function AppointmentCard({
               </h4>
               <div className="flex flex-col gap-1">
                 <div className="flex items-center">
-                  <Calendar className="h-5 w-5 text-emerald-400 mr-2" />
+                  <Calendar className="h-5 w-5 text-yellow-400 mr-2" />
                   <p className="text-white">
                     {formatDateTime(appointment.startTime)}
                   </p>
                 </div>
                 <div className="flex items-center">
-                  <Clock className="h-5 w-5 text-emerald-400 mr-2" />
+                  <Clock className="h-5 w-5 text-yellow-400 mr-2" />
                   <p className="text-white">
                     {formatTime(appointment.startTime)} -{" "}
                     {formatTime(appointment.endTime)}
@@ -417,7 +417,7 @@ export function AppointmentCard({
                   Video Consultation
                 </h4>
                 <Button
-                  className="w-full bg-emerald-600 hover:bg-emerald-700"
+                  className="w-full bg-red-600 hover:bg-red-700"
                   disabled={
                     !isAppointmentActive() || action === "video" || tokenLoading
                   }
@@ -467,7 +467,7 @@ export function AppointmentCard({
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
                     placeholder="Enter your clinical notes here..."
-                    className="bg-background border-emerald-900/20 min-h-[100px]"
+                    className="bg-background border-red-900/20 min-h-[100px]"
                   />
                   <div className="flex justify-end space-x-2">
                     <Button
@@ -501,7 +501,7 @@ export function AppointmentCard({
                   </div>
                 </div>
               ) : (
-                <div className="p-3 rounded-md bg-muted/20 border border-emerald-900/20 min-h-[80px]">
+                <div className="p-3 rounded-md bg-muted/20 border border-red-900/20 min-h-[80px]">
                   {appointment.notes ? (
                     <p className="text-white whitespace-pre-line">
                       {appointment.notes}
@@ -523,7 +523,7 @@ export function AppointmentCard({
                 <Button
                   onClick={handleMarkCompleted}
                   disabled={completeLoading}
-                  className="bg-emerald-600 hover:bg-emerald-700"
+                  className="bg-red-600 hover:bg-red-700"
                 >
                   {completeLoading ? (
                     <>

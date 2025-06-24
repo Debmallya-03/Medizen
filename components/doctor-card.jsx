@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function DoctorCard({ doctor }) {
   return (
-    <Card className="border-emerald-900/20 hover:border-emerald-700/40 transition-all">
+    <Card className="border-red-900/20 hover:border-red-700/40 transition-all">
       <CardContent>
         <div className="flex items-start gap-4">
           <div className="w-12 h-12 rounded-full bg-emerald-900/20 flex items-center justify-center flex-shrink-0">
@@ -43,7 +43,7 @@ export function DoctorCard({ doctor }) {
 
             <Button
               asChild
-              className="w-full bg-emerald-500 hover:bg-emerald-600 mt-2"
+              className="w-full bg-red-500 hover:bg-red-600 mt-2"
             >
               <Link href={`/doctors/${doctor.specialty}/${doctor.id}`}>
                 <Calendar className="h-4 w-4 mr-2" />

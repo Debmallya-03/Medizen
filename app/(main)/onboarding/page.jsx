@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Loader2, Stethoscope, User } from "lucide-react";
+import { Activity, Clock, Heart, Loader2, Pill, Plus, Shield, Stethoscope, User, Zap } from "lucide-react";
 import useFetch from "@/hooks/use-fetch";
 import { useRouter } from "next/navigation";
 import { setUserRole } from "@/actions/onboarding";
@@ -99,18 +99,80 @@ const OnboardingPage = () => {
   if (step === "choose-role"){
     return (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <Card className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all" 
+        {/* Enhanced floating medical elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Floating crosses with complex animations */}
+        <div className="absolute top-20 left-10 animate-float-complex-1">
+          <Plus className="w-8 h-8 text-red-500/40 animate-pulse-slow" />
+        </div>
+        <div className="absolute top-40 right-20 animate-float-complex-2">
+          <Plus className="w-6 h-6 text-red-600/50 animate-rotate-slow" />
+        </div>
+        <div className="absolute bottom-32 left-16 animate-float-complex-3">
+          <Plus className="w-10 h-10 text-red-400/30 animate-scale-pulse" />
+        </div>
+
+        {/* Floating hearts with heartbeat animations */}
+        <div className="absolute top-32 right-10 animate-float-heart-1">
+          <Heart className="w-9 h-9 text-red-600/40 animate-heartbeat-complex" />
+        </div>
+        <div className="absolute bottom-60 left-20 animate-float-heart-2">
+          <Heart className="w-6 h-6 text-red-400/35 animate-heartbeat-delayed" />
+        </div>
+        {/* <div className="absolute top-2/3 right-1/4 animate-float-heart-3">
+          <Heart className="w-7 h-7 text-red-500/45 animate-heartbeat-fast" />
+        </div> */}
+
+        {/* Floating pills with rotation */}
+        {/* <div className="absolute top-60 left-1/4 animate-float-pill-1">
+          <Pill className="w-10 h-10 text-red-400/35 animate-wobble" />
+        </div>
+        <div className="absolute bottom-40 right-1/3 animate-float-pill-2">
+          <Pill className="w-7 h-7 text-red-500/30 animate-swing" />
+        </div> */}
+
+        {/* Floating stethoscopes */}
+        <div className="absolute top-80 right-1/7 animate-float-steth-1">
+          <Stethoscope className="w-8 h-8 text-red-500/40 animate-pendulum" />
+        </div>
+        <div className="absolute bottom-10 left-1/4 animate-float-steth-2">
+          <Activity className="w-10 h-10 text-red-600/35 animate-wave" />
+        </div>
+
+        {/* Additional medical icons */}
+        {/* <div className="absolute top-1/2 left-5 animate-float-misc-1">
+          <Zap className="w-6 h-6 text-red-400/40 animate-electric" />
+        </div>
+        <div className="absolute top-1/3 right-5 animate-float-misc-2">
+          <Shield className="w-8 h-8 text-red-500/35 animate-shield-glow" />
+        </div>
+        <div className="absolute bottom-1/3 left-1/2 animate-float-misc-3">
+          <Clock className="w-7 h-7 text-red-600/30 animate-tick" />
+        </div> */}
+
+        {/* Floating particles */}
+        <div className="absolute top-1/4 left-1/3 animate-particle-1">
+          <div className="w-2 h-2 bg-red-500/50 rounded-full animate-twinkle" />
+        </div>
+        <div className="absolute top-3/4 right-1/4 animate-particle-2">
+          <div className="w-3 h-3 bg-red-400/40 rounded-full animate-glow-pulse" />
+        </div>
+        {/* <div className="absolute top-1/2 right-1/3 animate-particle-3">
+          <div className="w-1.5 h-1.5 bg-red-600/60 rounded-full animate-sparkle" />
+        </div> */}
+      </div>
+      <Card className="border-red-900/20 hover:border-red-700/40 cursor-pointer transition-all" 
             onClick={() => !loading && handlePatientSelection()}>                 
         <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-          <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <User className="h-8 w-8 text-emerald-400" />
+          <div className="p-4 bg-red-900/20 rounded-full mb-4">
+              <User className="h-8 w-8 text-red-400" />
           </div>
           <CardTitle className="text-xl font-semibold text-white mb-2">Join as a Patient</CardTitle>
           <CardDescription className="mb-4">
             Book appointments, consult with doctors, and manage your
             healthcare journey
           </CardDescription>
-          <Button className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700" disabled={loading}>
+          <Button className="w-full mt-2 bg-red-600 hover:bg-red-700" disabled={loading}>
              {loading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -124,13 +186,13 @@ const OnboardingPage = () => {
       </Card>
 
       <Card
-           className="border-emerald-900/20 hover:border-emerald-700/40 cursor-pointer transition-all"
+           className="border-red-900/20 hover:border-red-700/40 cursor-pointer transition-all"
            onClick={() => !loading && setStep("doctor-form")}
           
         >
           <CardContent className="pt-6 pb-6 flex flex-col items-center text-center">
-            <div className="p-4 bg-emerald-900/20 rounded-full mb-4">
-              <Stethoscope className="h-8 w-8 text-emerald-400" />
+            <div className="p-4 bg-red-900/20 rounded-full mb-4">
+              <Stethoscope className="h-8 w-8 text-red-400" />
             </div>
             <CardTitle className="text-xl font-semibold text-white mb-2">
               Join as a Doctor
@@ -140,7 +202,7 @@ const OnboardingPage = () => {
               provide consultations
             </CardDescription>
             <Button
-              className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"
+              className="w-full mt-2 bg-red-600 hover:bg-red-700"
               disabled={loading}
             >
               Continue as Doctor
@@ -154,7 +216,7 @@ const OnboardingPage = () => {
    // Doctor registration form
   if (step === "doctor-form") {
     return (
-      <Card className="border-emerald-900/20">
+      <Card className="border-red-900/20">
         <CardContent className="pt-6">
           <div className="mb-6">
             <CardTitle className="text-2xl font-bold text-white mb-2">
@@ -182,7 +244,7 @@ const OnboardingPage = () => {
                       value={spec.name}
                       className="flex items-center gap-2"
                     >
-                      <span className="text-emerald-400">{spec.icon}</span>
+                      <span className="text-red-400">{spec.icon}</span>
                       {spec.name}
                     </SelectItem>
                   ))}
@@ -248,14 +310,14 @@ const OnboardingPage = () => {
                 type="button"
                 variant="outline"
                 onClick={() => setStep("choose-role")}
-                className="border-emerald-900/30"
+                className="border-red-900/30"
                 disabled={loading}
               >
                 Back
               </Button>
               <Button
                 type="submit"
-                className="bg-emerald-600 hover:bg-emerald-700"
+                className="bg-red-600 hover:bg-red-700"
                 disabled={loading}
               >
                 {loading ? (

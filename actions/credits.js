@@ -19,22 +19,21 @@ const APPOINTMENT_CREDIT_COST = 2;
  * Checks user's subscription and allocates monthly credits if needed
  * This should be called on app initialization (e.g., in a layout component)
  */
-
-
-export async function checkAndAllocateCredits(user){
-    try {
-         if (!user) {
+export async function checkAndAllocateCredits(user) {
+  try {
+    if (!user) {
       return null;
     }
-     // Only allocate credits for patients
+
+    // Only allocate credits for patients
     if (user.role !== "PATIENT") {
       return user;
     }
-    
+
     // Check if user has a subscription
     const { has } = await auth();
 
-     // Check which plan the user has
+    // Check which plan the user has
     const hasBasic = has({ plan: "free_user" });
     const hasStandard = has({ plan: "standard" });
     const hasPremium = has({ plan: "premium" });
@@ -58,9 +57,11 @@ export async function checkAndAllocateCredits(user){
       return user;
     }
 
+    // Check if we already allocated credits for this month
     const currentMonth = format(new Date(), "yyyy-MM");
 
-     if (user.transactions.length > 0) {
+    // If there's a transaction this month, check if it's for the same plan
+    if (user.transactions.length > 0) {
       const latestTransaction = user.transactions[0];
       const transactionMonth = format(
         new Date(latestTransaction.createdAt),
@@ -75,7 +76,7 @@ export async function checkAndAllocateCredits(user){
       ) {
         return user;
       }
-    } 
+    }
 
     // Allocate credits and create transaction record
     const updatedUser = await db.$transaction(async (tx) => {
@@ -89,6 +90,7 @@ export async function checkAndAllocateCredits(user){
         },
       });
 
+      // Update user's credit balance
       const updatedUser = await tx.user.update({
         where: {
           id: user.id,
@@ -101,24 +103,21 @@ export async function checkAndAllocateCredits(user){
       });
 
       return updatedUser;
-    })
+    });
 
     // Revalidate relevant paths to reflect updated credit balance
     revalidatePath("/doctors");
     revalidatePath("/appointments");
 
-     return updatedUser;
-
-
-    } catch (error) {
-        console.error(
+    return updatedUser;
+  } catch (error) {
+    console.error(
       "Failed to check subscription and allocate credits:",
       error.message
     );
     return null;
-    }
+  }
 }
-
 
 /**
  * Deducts credits for booking an appointment
@@ -133,11 +132,11 @@ export async function deductCreditsForAppointment(userId, doctorId) {
       where: { id: doctorId },
     });
 
-     // Ensure user has sufficient credits
+    // Ensure user has sufficient credits
     if (user.credits < APPOINTMENT_CREDIT_COST) {
       throw new Error("Insufficient credits to book an appointment");
     }
-    
+
     if (!doctor) {
       throw new Error("Doctor not found");
     }
@@ -150,14 +149,6 @@ export async function deductCreditsForAppointment(userId, doctorId) {
           userId: user.id,
           amount: -APPOINTMENT_CREDIT_COST,
           type: "APPOINTMENT_DEDUCTION",
-        },
-      });
-       // Create transaction record for doctor (addition)
-      await tx.creditTransaction.create({
-        data: {
-          userId: doctor.id,
-          amount: APPOINTMENT_CREDIT_COST,
-          type: "APPOINTMENT_DEDUCTION", // Using same type for consistency
         },
       });
 
@@ -193,11 +184,13 @@ export async function deductCreditsForAppointment(userId, doctorId) {
           },
         },
       });
+
       return updatedUser;
     });
+
     return { success: true, user: result };
   } catch (error) {
+    console.error("Failed to deduct credits:", error);
     return { success: false, error: error.message };
   }
-
 }
