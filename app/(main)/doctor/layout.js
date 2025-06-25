@@ -9,7 +9,7 @@ export const metadata = {
 export default async function DoctorDashboardLayout({ children }) {
   return (
     <div className="container mx-auto px-4 py-8">
-      <PageHeader icon={<Stethoscope />} title="Doctor Dashboard" />
+      <PageHeader icon={<Stethoscope color="red"/>} title="Doctor Dashboard" />
 
       {children}
     </div>
